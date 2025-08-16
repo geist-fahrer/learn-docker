@@ -14,6 +14,12 @@ docker images
 docker ps
 docker build -t node-app .
 docker run -p 3000:3000 node-app:latest
+
+# Pull image from docker registry
+docker pull <image-name>:tag
+
+# Run a container in interactive mode
+docker run -it node:latest
 ```
 **Notes:** 
 <details>
@@ -22,6 +28,9 @@ docker run -p 3000:3000 node-app:latest
 - Added .dockerignore to ignore unnecessary files.
 - Created an image node-app:latest with this file.
 - Used docker run to spin up a container which is accessible on port 3000
+- Pulled a image directly from docker hub and ran an interactive container with it.
+- Docker uses layer based architecture to build images. Due to which it will execute the instructions which is changed along with all the instructions after that.
+
 
 </details>
 
