@@ -6,8 +6,8 @@ Following the [Docker Roadmap](https://roadmap.sh/docker) for structured learnin
 
 ## Daily Learning Tracker
 
-### 2025-08-16
-**Topic:*Basic Docker Images and Container*   
+### 16-08-2025
+**Topic:** *Basic Docker Images and Container*   
 **Commands/Code:**  
 ```bash
 docker images
@@ -35,6 +35,23 @@ docker run -it node:latest
 </details>
 
 ---
+### 17-08-2025
+**Topic:** *Basic operations on images and containers*
+**Commands/Code:**  
+```bash
+# Execute a container in detach mode
+docker run -p port:port -d <image-name>:tag
+# Start an existing container
+docker start <container_id>
+```
+**Notes:** 
+<details>
+
+- Starting a container with *docker start* command, will start it in detached mode.
+
+</details>
+
+---
 
 ### Template for New Entries
 **Topic:**  
@@ -44,7 +61,6 @@ docker run -it node:latest
 ```
 **Notes:** 
 <details>
-<summary>Learning Summary</summary>
 
 - What I learned
 - Challenges faced

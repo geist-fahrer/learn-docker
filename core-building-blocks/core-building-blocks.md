@@ -7,4 +7,5 @@ docker pull node
 docker run node
 docker run -it node
 docker ps -a
+docker start <container_name>
 ```
