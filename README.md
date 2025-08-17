@@ -4,6 +4,10 @@ This repository has docker related documents and images created for learning
 ## Learning Progress
 Following the [Docker Roadmap](https://roadmap.sh/docker) for structured learning.
 
+## Reference
+
+**[Docker official guide](https://docs.docker.com/reference/)**
+
 ## Daily Learning Tracker
 
 ### 16-08-2025
@@ -59,8 +63,12 @@ docker start -i <container_id>
 docker rmi <image_id1> <image_id2>
 # Delete container
 docker rm <container_id1> <container_id2>
+# Remove all containers
+docker container prune
 # Remove unused untagged images
 docker image prune
+# Remove all images
+docker image prune -a
 # Remove container when exit
 docker run -p port:port -d --rm <image_id>
 # Details of an image
@@ -77,7 +85,8 @@ docker cp <container_id>:<path_in_container> <local_path>
 - All the commands accept both container_id and container_name.
 - If a container needs user input at runtime, it can be executed in interactive mode.
 - First container using an image has to be removed then only image can be removed.
-
+- Images can pushed or pull from dockerhub or private registry.
+- If a image is available locally, docker will not update automatically unless explicit pull is done.
 
 </details>
 
