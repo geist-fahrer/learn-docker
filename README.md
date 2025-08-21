@@ -90,6 +90,20 @@ docker cp <container_id>:<path_in_container> <local_path>
 
 </details>
 
+### 21-08-2025
+**Topic:** *Managing data and working with volumnes*
+**Commands/Code:**  
+```bash
+
+```
+**Notes:** 
+<details>
+
+- What I learned
+- Challenges faced
+- Things to remember
+
+</details>
 ---
 
 ### Template for New Entries
