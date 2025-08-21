@@ -94,14 +94,14 @@ docker cp <container_id>:<path_in_container> <local_path>
 **Topic:** *Managing data and working with volumnes*
 **Commands/Code:**  
 ```bash
-
+# Start a container with named volumes
+docker run -d -p 3000:80 -rm --name feedback-app -v feedback:/app/feedback feedback-app_vol:1.0.0
 ```
 **Notes:** 
 <details>
 
-- What I learned
-- Challenges faced
-- Things to remember
+- There are two types of docker volume : anonymous and named.
+- Named volume is used to persist the data and provided on command line
 
 </details>
 ---
