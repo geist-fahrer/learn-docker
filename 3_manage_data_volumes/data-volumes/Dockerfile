@@ -6,9 +6,11 @@ COPY package.json .
 
 RUN npm install
 
-ENV PORT=80
-
 COPY . .
+
+ARG DEFAULT_PORT=80
+
+ENV PORT=${DEFAULT_PORT}
 
 EXPOSE $PORT
 
