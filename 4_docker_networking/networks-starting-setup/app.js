@@ -4,7 +4,7 @@ const axios = require('axios').default;
 const mongoose = require('mongoose');
 
 const Favorite = require('./models/favorite');
-
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0;
 const app = express();
 
 app.use(bodyParser.json());
@@ -20,7 +20,8 @@ app.post('/favorites', async (req, res) => {
   const favName = req.body.name;
   const favType = req.body.type;
   const favUrl = req.body.url;
-
+  console.log(favName, favType, favUrl);
+ 
   try {
     if (favType !== 'movie' && favType !== 'character') {
       throw new Error('"type" should be "movie" or "character"!');
@@ -51,24 +52,27 @@ app.post('/favorites', async (req, res) => {
 
 app.get('/movies', async (req, res) => {
   try {
-    const response = await axios.get('https://swapi.dev/api/films');
+    const response = await axios.get('https://swapi.py4e.com/api/films');
     res.status(200).json({ movies: response.data });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: 'Something went wrong.' });
   }
 });
 
 app.get('/people', async (req, res) => {
   try {
-    const response = await axios.get('https://swapi.dev/api/people');
+    const response = await axios.get('https://swapi.py4e.com/api/people');
     res.status(200).json({ people: response.data });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: 'Something went wrong.' });
   }
 });
 
+
 mongoose.connect(
-  'mongodb://localhost:27017/swfavorites',
+  'mongodb://mongodb:27017/swfavorites',
   { useNewUrlParser: true },
   (err) => {
     if (err) {
